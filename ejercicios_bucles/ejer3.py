@@ -10,10 +10,8 @@ nota = 0.0
 notas = []
 comando = ""
 # Buscar una mejor solucion al While True
-while True:
+while comando != "ENTER":
     comando = input(f"Nota del alumno {str(id_alumno)}: ")
-    if comando == "ENTER":
-        break
     try:
         nota = float(comando)
     except ValueError:
@@ -32,4 +30,4 @@ print("Suspensos:", cant_suspensos)
 print("Nota media:", round(stats.mean(notas), ndigits=2))
 
 # Otra manera de mostrar la media
-#print("Nota media:", round(sum(notas) / len(notas), ndigits=2))
+# print("Nota media:", round(sum(notas) / len(notas), ndigits=2))
