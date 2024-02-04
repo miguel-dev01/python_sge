@@ -31,24 +31,25 @@ def contagiar(matriz):
             # si filas tiene valor entonces ... sino 0
             columnas = len(matriz[i]) if filas > 0 else 0
             for j in range(columnas):
-                #derecha
+                # derecha
                 if j < columnas - 1 and matriz[i][j + 1] == "sano":
                     matriz[i][j + 1] = "I-" + str(dia_actual) + "\t"
                     total_elem -= 1
-                #izqui
+                # izqui
                 if j > 0 and matriz[i][j - 1] == "sano":
                     matriz[i][j - 1] = "I-" + str(dia_actual) + "\t"
                     total_elem -= 1
-                #arriba
+                # arriba
                 if i > 0 and matriz[i - 1][j] == "sano":
                     matriz[i - 1][j] = "I-" + str(dia_actual) + "\t"
                     total_elem -= 1
-                #abajo
+                # abajo
                 if i < filas - 1 and matriz[i + 1][j] == "sano":
                     matriz[i + 1][j] = "I-" + str(dia_actual) + "\t"
                     total_elem -= 1
             dia_actual += 1
             mostrarCiudad(matriz, dia_actual)
+
 
 try:
     filas = int(input("Introduce numero de filas: "))
